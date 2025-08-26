@@ -1,5 +1,4 @@
-
-
+<img width="1239" height="591" alt="image" src="https://github.com/user-attachments/assets/481fc0e1-aaaa-45a8-9506-84b70465f5e0" />
 nat
 前置条件
 AR1
