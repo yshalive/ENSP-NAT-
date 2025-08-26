@@ -12,6 +12,8 @@ interface GigabitEthernet0/0/1ip address 192.168.2.254 255.255.255.0
 ## 静态nat 
 nat static global 172.16.1.1 inside 192.168.1.1 netmask 255.255.255.255 
 
+*静态地址转换指定某个地址全局应用
+
 ## 动态nat
 
 AR1 acl number 2000
