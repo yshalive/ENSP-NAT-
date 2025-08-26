@@ -8,8 +8,8 @@ AR2 sysname R2
 interface GigabitEthernet0/0/0 ip address 10.0.0.2 255.255.255.0
 interface GigabitEthernet0/0/1ip address 192.168.2.254 255.255.255.0
 
-## 静态nat `rgb(9, 105, 218)`
-nat static global 172.16.1.1 inside 192.168.1.1 netmask 255.255.255.255
+## 静态nat The background color is `rgb(9, 105, 218)`
+nat static global 172.16.1.1 inside 192.168.1.1 netmask 255.255.255.255 The background color is `rgb(9, 105, 218)`
 
 ## 动态nat
 AR1 acl number 2000
