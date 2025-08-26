@@ -15,14 +15,14 @@ nat static global 172.16.1.1 inside 192.168.1.1 netmask 255.255.255.255
 
 ## 动态nat
 
-acl number 2000
-*创建基本规则*
-rule 5 permit source 192.168.1.0 0.0.0.255
-*规则指定网端和反掩码*
-nat address-group 1 172.16.1.1 172.16.1.5
-*设置转换后的地址组*
-nat outbound 2000 address-group 1 no-pat
-*设置接口应用基本规则以及可用地址组*
+acl number 2000*创建基本规则*
+
+rule 5 permit source 192.168.1.0 0.0.0.255*规则指定网端和反掩码*
+
+nat address-group 1 172.16.1.1 172.16.1.5*设置转换后的地址组*
+
+nat outbound 2000 address-group 1 no-pat*设置接口应用基本规则以及可用地址组*
+
 ip route-static 172.168.1.0 255.255.255.0 10.0.1.2
 *给一个静态路由指定网端*
 
