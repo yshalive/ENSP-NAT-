@@ -3,37 +3,28 @@
 
 前置条件 AR1 sysname R1
 interface GigabitEthernet0/0/0 ip address 192.168.1.254 255.255.255.0
-interface GigabitEthernet0/0/1 ip address 10.0.0.1 255.255.255.0
+interface GigabitEthernet0/0/1 ip address 10.0.1.1 255.255.255.0
 
 AR2 sysname R2
-interface GigabitEthernet0/0/0 ip address 10.0.0.2 255.255.255.0
+interface GigabitEthernet0/0/0 ip address 10.0.1.2 255.255.255.0
 interface GigabitEthernet0/0/1ip address 192.168.2.254 255.255.255.0
 
 ## 静态nat 
 nat static global 172.16.1.1 inside 192.168.1.1 netmask 255.255.255.255 
-
-*静态地址转换指定某个地址全局应用
+*静态地址转换指定某个地址全局应用*
 
 ## 动态nat
 
-AR1 acl number 2000
+acl number 2000
+*创建基本规则*
 rule 5 permit source 192.168.1.0 0.0.0.255
-
+*规则指定网端和反掩码*
 nat address-group 1 172.16.1.1 172.16.1.5
-
-interface GigabitEthernet0/0/0 ip address 192.168.1.254 255.255.255.0
-
-interface GigabitEthernet0/0/1 ip address 10.0.0.1 255.255.255.0
-
+*设置转换后的地址组*
 nat outbound 2000 address-group 1 no-pat
-
-ip route-static 192.168.2.0 255.255.255.0 10.0.0.2
-
-AR2
-
-ip route-static 172.16.1.0 255.255.255.0 10.0.0.1
-
-ip route-static 192.168.1.0 255.255.255.0 10.0.0.1
+*设置接口应用基本规则以及可用地址组*
+ip route-static 172.168.1.0 255.255.255.0 10.0.1.2
+*给一个静态路由指定网端*
 
 ### 知识要点
 
