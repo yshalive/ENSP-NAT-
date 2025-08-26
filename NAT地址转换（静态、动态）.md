@@ -10,7 +10,6 @@ interface GigabitEthernet0/0/1ip address 192.168.2.254 255.255.255.0
 
 ## 静态nat 
 nat static global 172.16.1.1 inside 192.168.1.1 netmask 255.255.255.255 
-The background color is `rgb(9, 105, 218)`
 
 ## 动态nat
 AR1 acl number 2000
