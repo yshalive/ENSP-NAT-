@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.200T">
+    <devices>
+        <dev id="F05A41AE-51EA-4775-B696-C92BF0D8E088" name="LSW2" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-05-31-34" com_port="2001" bootmode="0" cx="872.000000" cy="246.000000" edit_left="899" edit_top="300">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="D09500EA-FCCF-4772-92B7-B219F1136821" name="LSW1" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-EE-42-E7" com_port="2000" bootmode="0" cx="356.000000" cy="242.000000" edit_left="383" edit_top="296">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="D09500EA-FCCF-4772-92B7-B219F1136821" destDeviceID="F05A41AE-51EA-4775-B696-C92BF0D8E088">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="426.182465" srcBoundRect_Y="269.334747" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="855.817505" tarBoundRect_Y="272.665253" tarOffset_X="0.000000" tarOffset_Y="-1.000000" />
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="0" srcBoundRect_X="434.182465" srcBoundRect_Y="261.334747" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="863.817505" tarBoundRect_Y="264.665253" tarOffset_X="-1.000000" tarOffset_Y="1.000000" />
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="0" srcBoundRect_X="418.182465" srcBoundRect_Y="277.334747" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="2" tarBoundRectIsMoved="0" tarBoundRect_X="847.817505" tarBoundRect_Y="280.665253" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="140" top="42" right="597" bottom="527" content="RouteA&#x0D;&#x0A;#&#x0D;&#x0A;sys&#x0D;&#x0A;#&#x0D;&#x0A;sysname RouterA&#x0D;&#x0A;#&#x0D;&#x0A;int Eth-Trunk 1 创建trunk组1&#x0D;&#x0A;#&#x0D;&#x0A;mode lacp-static 模式lacp静态&#x0D;&#x0A;#&#x0D;&#x0A;int g0/0/1 &#x0D;&#x0A;eth-trunk 1 接口加入trunk组&#x0D;&#x0A;#&#x0D;&#x0A;int g0/0/2&#x0D;&#x0A;eth-trunk 1&#x0D;&#x0A;#&#x0D;&#x0A;int g0/0/3&#x0D;&#x0A;eth-trunk 1&#x0D;&#x0A;#&#x0D;&#x0A;lacp priority 100系统优先级设置100使用lacp成为主动端&#x0D;&#x0A;#&#x09;&#x0D;&#x0A;[RouterA]int Eth-Trunk 1&#x0D;&#x0A;&#x0D;&#x0A;[RouterA-Eth-Trunk1]max active-linknumber 2 设置最大活动端口&#x0D;&#x0A;&#x0D;&#x0A;[RouterA]int g0/0/1&#x0D;&#x0A;[RouterA-GigabitEthernet0/0/1]lacp priority 100 设置接口等级&#x0D;&#x0A;&#x0D;&#x0A;[RouterA]int g0/0/2&#x0D;&#x0A;[RouterA-GigabitEthernet0/0/2]lacp priority 100&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="932" top="51" right="1238" bottom="427" content="RouterB&#x0D;&#x0A;#&#x0D;&#x0A;&lt;Huawei&gt;sys&#x0D;&#x0A;[Huawei]un in en&#x0D;&#x0A;&#x0D;&#x0A;[Huawei]sysna RouteB&#x0D;&#x0A;&#x09;&#x0D;&#x0A;[RouteB]int Eth-Trunk 1&#x0D;&#x0A;&#x0D;&#x0A;&#x09;&#x0D;&#x0A;&#x0D;&#x0A;[RouteB-Eth-Trunk1]mode lacp-static &#x0D;&#x0A;&#x0D;&#x0A;[RouteB]int g0/0/1&#x0D;&#x0A;&#x0D;&#x0A;[RouteB-GigabitEthernet0/0/1]eth-trunk 1&#x0D;&#x0A;&#x0D;&#x0A;[RouteB]int g0/0/2&#x0D;&#x0A;[RouteB-GigabitEthernet0/0/2]eth-trunk 1&#x0D;&#x0A;&#x0D;&#x0A;[RouteB]int g0/0/3&#x0D;&#x0A;&#x09;&#x0D;&#x0A;[RouteB-GigabitEthernet0/0/3]eth-trunk 1&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>
